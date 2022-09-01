@@ -9,9 +9,8 @@ const Home: NextPage = () => {
   const address = useAddress();
   const { contract, isLoading } = useContract(process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS);
 
-  if (isLoading) return <Loading />
-
   // First Loader and then check if already login to prevent page from flicking...
+  if (isLoading) return <Loading />
   if (!address) return <Login />
 
   return (
@@ -22,6 +21,31 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
+
+      {/* Draw Box */}
+      <div>
+        <div className='stats-container'>
+          <h1 className='text-5xl text-white font-semibold text-center'>The Next Draw</h1>
+          <div className='flex justify-between p-2 space-x-2'>
+            <div className='stats'>
+              <h2 className='text-sm'>Total Pool</h2>
+              <p className='text-xl'>0.1 MATIC</p>
+            </div>
+            <div className='stats'>
+              <h2 className='text-sm'>Tickets Remaining</h2>
+              <p className='text-xl'>100</p>
+            </div>
+          </div>
+
+          {/** Countdown Timer */}
+          
+        </div>
+      </div>
+
+      {/** Buy Tickets Box */}
+      <div>
+
+      </div>
     </div>
   )
 }
