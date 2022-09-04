@@ -7,6 +7,7 @@ import Loading from '../components/Loading'
 import { useState } from 'react'
 import { ethers } from 'ethers'
 import { currency } from '../constants'
+import CountdownTimer from '../components/CountdownTimer'
 
 const Home: NextPage = () => {
   const [quantity, setQuantity] = useState<number>(1);
@@ -57,7 +58,9 @@ const Home: NextPage = () => {
           </div>
 
           {/** Countdown Timer */}
-
+          <div className='mt-5 mb-3'>
+            <CountdownTimer />
+          </div>
         </div>
 
         <div className='stats-container space-z-2'>
