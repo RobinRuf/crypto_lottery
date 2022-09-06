@@ -7,11 +7,15 @@ import Loading from '../components/Loading'
 import { useState } from 'react'
 import { ethers } from 'ethers'
 import { currency } from '../constants'
+import CountdownTimer from '../components/CountdownTimer'
 
 const Home: NextPage = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const address = useAddress();
   const { contract, isLoading } = useContract(process.env.NEXT_PUBLIC_LOTTERY_CONTRACT_ADDRESS);
+  const { data: expiration } = useContractData(contract, 'expiration');
+  const { data: ticketPrice } = useContractData(contract, 'ticketPrice');
+  const { data: ticketCommission } = useContractData(contract, 'ticketCommission');
 
   // get remaining Tickets from Contract
   const { data: remainingTickets } = useContractData(
@@ -54,14 +58,16 @@ const Home: NextPage = () => {
           </div>
 
           {/** Countdown Timer */}
-
+          <div className='mt-5 mb-3'>
+            <CountdownTimer />
+          </div>
         </div>
 
         <div className='stats-container space-z-2'>
           <div className='stats-container'>
             <div className='flex justify-between items-center text-white pb-2'>
               <h2>Price per ticket</h2>
-              <p>0.1 MATIC</p>
+              <p>{ticketPrice && ethers.utils.formatEther(ticketPrice.toString())}{" "}{currency}</p>
             </div>
 
             <div className='flex text-white items-center space-x-2 bg-[#091818] border-[#004337] border p-4'>
@@ -72,12 +78,12 @@ const Home: NextPage = () => {
             <div className='space-y-2 mt-5'>
               <div className='flex items-center justify-between text-emerald-300 text-sm italic font-extrabold'>
                 <p>Total cost of tickets</p>
-                <p>0.999</p>
+                <p>{ticketPrice && Number(ethers.utils.formatEther(ticketPrice.toString())) * quantity}{" "}{currency}</p>
               </div>
 
               <div className='flex items-center justify-between text-emerald-300 text-xs italic'>
                 <p>Service fees</p>
-                <p>0.001 MATIC</p>
+                <p>{ticketCommission && ethers.utils.formatEther(ticketCommission.toString())}{" "}{currency}</p>
               </div>
 
               <div className='flex items-center justify-between text-emerald-300 text-xs italic'>
@@ -86,7 +92,13 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <button className='mt-5 w-full bg-gradient-to-br from-orange-500 to-emerald-600 px-10 py-5 rounded-md text-white shadow-xl disabled:from-gray-600 disabled:to-gray-600 disabled:text-gray-100 disabled:cursor-not-allowed'>Buy tickets</button>
+            <button 
+              disabled={expiration?.toString() < Date.now().toString() || remainingTickets?.toNumber() === 0} 
+              className='mt-5 w-full bg-gradient-to-br from-orange-500 to-emerald-600 px-10 
+              py-5 rounded-md text-white shadow-xl disabled:from-gray-600 disabled:to-gray-600 
+              disabled:text-gray-100 disabled:cursor-not-allowed'>
+                Buy tickets
+            </button>
           </div>
 
         </div>
