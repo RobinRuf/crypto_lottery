@@ -8,7 +8,7 @@ interface Props {
 
 function NavButton({ title, isActive, onClick }: Props) {
   return (
-    <button onClick={onClick} className={`${isActive && 'bg-[#036756]'} hover:bg-[#036756] font-bold text-white py-2 px-4 rounded`}>
+    <button onClick={onClick} className={`${isActive && 'bg-[#011570]/50'} hover:bg-[#011570]/50 font-bold text-white py-2 px-4 rounded`}>
         {title}
     </button>
   )
