@@ -65,7 +65,7 @@ const Home: NextPage = () => {
   const { data: isLotteryOperator } = useContractData(contract, "lotteryOperator");
 
   const handleClick = async () => {
-    //if (expiration) return;
+    if (expiration?.toString() < Date.now().toString()) return;
     if (!ticketPrice) return;
 
     const notification = toast.loading('Buying your tickets...');
@@ -113,15 +113,15 @@ const Home: NextPage = () => {
   if (!address) return <Login />
 
   return (
-    <div className="bg-[#091B18] min-h-screen flex flex-col">
+    <div className="bg-gradient-to-b from-[#5068fc] to-[#011570] min-h-screen flex flex-col">
       <Head>
         <title>Lottery</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
       <div className='flex-1'>
       <Header />
-      <Marquee className='bg-[#0A1F1C] p-5 mb-5' gradient={false} speed={100}>
+      <Marquee className='bg-[#011570]/10 p-5 mb-5' gradient={false} speed={100}>
         <div className='flex space-x-2 mx-10'>
           <h4 className='text-white font-bold'>Last Winner: {lastWinner?.toString()}</h4>
           <h4 className='text-white font-bold'>Previous winnings: {" "} {lastWinnerAmount && ethers.utils.formatEther(lastWinnerAmount?.toString())}{" "}{currency}</h4>
@@ -176,23 +176,23 @@ const Home: NextPage = () => {
               <p>{ticketPrice && ethers.utils.formatEther(ticketPrice.toString())}{" "}{currency}</p>
             </div>
 
-            <div className='flex text-white items-center space-x-2 bg-[#091818] border-[#004337] border p-4'>
+            <div className='flex text-white items-center space-x-2 bg-[#011570]/50 border-[#011570]/60 border p-4'>
               <p>TICKETS</p>
               <input className='flex w-full bg-transparent text-right outline-none' type='number' min={1} max={10} value={quantity} onChange={e => setQuantity(Number(e.target.value))} />
             </div>
 
             <div className='space-y-2 mt-5'>
-              <div className='flex items-center justify-between text-emerald-300 text-sm italic font-extrabold'>
+              <div className='flex items-center justify-between text-[#5068fc] text-sm italic font-extrabold'>
                 <p>Total cost of tickets</p>
                 <p>{ticketPrice && Number(ethers.utils.formatEther(ticketPrice.toString())) * quantity}{" "}{currency}</p>
               </div>
 
-              <div className='flex items-center justify-between text-emerald-300 text-xs italic'>
+              <div className='flex items-center justify-between text-[#5068fc] text-xs italic'>
                 <p>Service fees</p>
                 <p>{ticketCommission && ethers.utils.formatEther(ticketCommission.toString())}{" "}{currency}</p>
               </div>
 
-              <div className='flex items-center justify-between text-emerald-300 text-xs italic'>
+              <div className='flex items-center justify-between text-[#5068fc] text-xs italic'>
                 <p>+ Network Fees</p>
                 <p>TBC</p>
               </div>
@@ -200,7 +200,7 @@ const Home: NextPage = () => {
             <button 
               onClick={handleClick} 
               disabled={expiration?.toString() < Date.now().toString() || remainingTickets?.toNumber() === 0} 
-              className='mt-5 w-full bg-gradient-to-br from-orange-500 to-emerald-600 px-10 
+              className='mt-5 w-full bg-gradient-to-br from-[#5068fc] to-[#011570] px-10 
               py-5 rounded-md text-white shadow-xl disabled:from-gray-600 disabled:to-gray-600 
               disabled:text-gray-100 disabled:cursor-not-allowed font-semibold'>
                 Buy {quantity} Tickets for{" "} {ticketPrice && 
@@ -208,12 +208,12 @@ const Home: NextPage = () => {
             </button>
           </div>
           {userTickets > 0 && (
-            <div className='stats'>
+            <div className='stats mt-4'>
               <p className='text-lg mb-2'>You have {userTickets} Tickets in this draw</p>
               <div className='flex max-w-sm flex-wrap gap-x-2 gap-y-2'>
                 {Array(userTickets).fill("").map((_, index) => (
                   <p key={index} 
-                    className='text-emerald-300 h-20 w-12 bg-emerald-500/30 rounded-lg 
+                    className='text-[#5068fc] h-20 w-12 bg-[#011570]/50 border-[#011570]/60 border-2 rounded-lg 
                     flex flex-shrink-0 items-center justify-center text-xs italic'
                   >
                     {index + 1}
