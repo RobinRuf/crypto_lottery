@@ -10,12 +10,12 @@ function Header() {
   return (
     <header className='grid grid-cols-2 md:grid-cols-5 justify-between items-center p-5'> 
     <div>
-        <h1 className='text-lg text-white font-bold md:hidden'>Saphire Lottery</h1>
-        <p className='text-sm text-[#011570]/50 turncate'>Wallet: {address?.substring(0,5)}...{address?.substring(address.length, address.length - 5)}</p>
+        <h1 className='text-lg text-white font-bold md:hidden'>Sapphire Draw</h1>
+        <p className='text-sm text-white turncate'>Wallet: {address?.substring(0,5)}...{address?.substring(address.length, address.length - 5)}</p>
     </div>
 
     <div className='items-center justify-center hidden md:flex md:col-span-3'>
-    <h1 className='text-lg text-white font-bold'>Saphire Lottery</h1>
+    <h1 className='text-lg text-white font-bold'>Sapphire Draw</h1>
     </div>
 
     {/* <div className='hidden md:flex md:col-span-3 items-center justify-center rounded-md'>

@@ -115,7 +115,7 @@ const Home: NextPage = () => {
   return (
     <div className="bg-gradient-to-b from-[#5068fc] to-[#011570] min-h-screen flex flex-col">
       <Head>
-        <title>Lottery</title>
+        <title>Sapphire Draw</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
@@ -135,13 +135,14 @@ const Home: NextPage = () => {
         </div>
       )}
 
+      {/* Winner Button */}
       {winnings > 0 && (
         <div className='max-w-md md:max-w-2xl lg:max-w-4xl mx-auto mt-5'>
-          <button onClick={onWithdrawWinnings} className='p-5 bg-gradient-to-b from-orange-500 to-emerald-600 animate-pulse text-center rounded-xl w-full'>
-            <p className='font-bold'>Winner Winner Chicken Dinner!</p>
-            <p>Total Winnings: {ethers.utils.formatEther(winnings.toString())}{" "}{currency}</p>
+          <button onClick={onWithdrawWinnings} className='p-5 bg-gradient-to-br from-[#5068fc]/50 to-[#011570]/50 border border-[#011570]/60 shadow-lg animate-pulse text-center rounded-xl w-full'>
+            <p className='text-xl font-extrabold text-yellow-200'>Winner Winner Chicken Dinner!</p>
+            <p className='text-white'>Total Winnings: {ethers.utils.formatEther(winnings.toString())}{" "}{currency}</p>
             <br />
-            <p className='font-semibold'>Click Here to Withdraw</p>
+            <p className='font-semibold text-white'>Click Here to Withdraw</p>
           </button>
         </div>
       )}
@@ -226,8 +227,8 @@ const Home: NextPage = () => {
       </div>
     </div>
     {/* Footer / Disclaimer */}
-    <div className='border-t border-emerald-500/20 flex items-center text-white justify-between p-5'>
-      <p className='text-xs text-emerald-900 pl-5'>
+    <div className='border-t border-gray-500 mx-5 flex items-center text-white justify-between p-5'>
+      <p className='text-xs text-gray-500 pl-5'>
         DISCLAIMER: Gambling is only allowed from the age of 18! With every 
         transaction on this platform, the user confirms to be of legal age. 
         Gambling can be addictive. If you suffer from gambling addiction, 
