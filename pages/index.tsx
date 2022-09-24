@@ -11,8 +11,12 @@ import CountdownTimer from '../components/CountdownTimer'
 import toast from 'react-hot-toast'
 import Marquee from 'react-fast-marquee'
 import AdminControls from '../components/AdminControls'
+import { InformationCircleIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { DefaultPlayer as Video } from 'react-html5video';
+import 'react-html5video/dist/styles.css'
 
 const Home: NextPage = () => {
+  const [tutorial, setTutorial] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
   const address = useAddress();
   const [userTickets, setUserTickets] = useState(0);
@@ -117,6 +121,10 @@ const Home: NextPage = () => {
       <Head>
         <title>Sapphire Draw</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
       </Head>
       
       <div className='flex-1'>
@@ -144,6 +152,25 @@ const Home: NextPage = () => {
             <br />
             <p className='font-semibold text-white'>Click Here to Withdraw</p>
           </button>
+        </div>
+      )}
+
+      {/* Help Section */}
+      <div className='flex flex-row items-center justify-center mt-10'>
+        <InformationCircleIcon className='h-6 w-6 text-white' />
+        <p onClick={(e) => setTutorial(!tutorial)} className='text-white pl-2 underline cursor-pointer'>How to get Matic in Metamask?</p>
+      </div>
+
+      { tutorial && (
+        <div className='flex items-center justify-center bg-black/30 rounded-lg w-full h-screen'>
+          <div className='ml-auto mr-2 mt-2 mb-2'>
+            <XMarkIcon className='h-6 w-6 text-white' />
+          </div>
+          <div className='h-48 w-28'>
+            <Video>
+              <source src='./tutorial.mp4' type='video/mp4' />
+            </Video>
+          </div>
         </div>
       )}
 
