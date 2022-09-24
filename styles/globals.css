@@ -22,4 +22,8 @@
     .admin-button {
         @apply bg-[#011570]/50 p-2 mx-2 flex-1 rounded-md border-[#011570]/60 border-2 hover:bg-emerald-500/50
     }
+
+    * {
+        @apply font-standard
+    }
 }
