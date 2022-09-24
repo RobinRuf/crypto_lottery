@@ -6557,7 +6557,7 @@
     "shell-quote" "^1.6.1"
     "ws" "^7"
 
-"react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>= 15", "react-dom@>= 16.8.0 || 18.0.0", "react-dom@>=16", "react-dom@>=18.0.0", "react-dom@18.1.0":
+"react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>= 15", "react-dom@>= 16.8.0 || 18.0.0", "react-dom@>=15.0.0", "react-dom@>=16", "react-dom@>=18.0.0", "react-dom@18.1.0":
   "integrity" "sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.1.0.tgz"
   "version" "18.1.0"
@@ -6576,6 +6576,11 @@
   "version" "2.3.0"
   dependencies:
     "goober" "^2.1.10"
+
+"react-html5video@^2.5.1":
+  "integrity" "sha512-ELx5VIRJMIztYo7jdh0Xp1Ah6CziK3KGbwWsMOlNYyIUQHjFbjAEiAF8uY5CzVLofOA1159pbFgcVAPJSuqG2g=="
+  "resolved" "https://registry.npmjs.org/react-html5video/-/react-html5video-2.5.1.tgz"
+  "version" "2.5.1"
 
 "react-icons@^4.4.0":
   "integrity" "sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg=="
@@ -6671,7 +6676,7 @@
   "resolved" "https://registry.npmjs.org/react-spinners/-/react-spinners-0.13.4.tgz"
   "version" "0.13.4"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 15", "react@>= 16", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>= 16.8.0 || 18.0.0", "react@>=16", "react@>=16.8.0", "react@>=16.8.6", "react@>=18.0.0", "react@18.1.0":
+"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 15", "react@>= 16", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>= 16.8.0 || 18.0.0", "react@>=15.0.0", "react@>=16", "react@>=16.8.0", "react@>=16.8.6", "react@>=18.0.0", "react@18.1.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"

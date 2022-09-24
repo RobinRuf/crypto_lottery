@@ -26,4 +26,8 @@
     * {
         @apply font-standard
     }
+
+    body {
+        @apply scrollbar-thin scrollbar-track-[#5068fc]/20 scrollbar-thumb-[#011570]/60
+    }
 }
