@@ -259,7 +259,7 @@ const Home: NextPage = () => {
         transaction on this platform, the user confirms to be of legal age. 
         Gambling can be addictive. If you suffer from gambling addiction, 
         please contact a local counseling center. This platform does not assume any liability. 
-        A refund is not possible.
+        A refund is not possible but if the draw was canceled by the platform.
       </p>
     </div>
     </div>
