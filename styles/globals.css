@@ -12,7 +12,7 @@
     }
 
     .countdown {
-        @apply p-8 text-5xl text-center rounded-lg lg:min-w-[150px] bg-[#011570]/50 text-white
+        @apply lg:p-8 p-4 lg:text-5xl text-3xl text-center rounded-lg lg:min-w-[120px] min-w-[80px] bg-[#011570]/50 text-white
     }
 
     .countdown-label {
