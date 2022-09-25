@@ -143,8 +143,8 @@ const Home: NextPage = () => {
 
       {/* Winner Button */}
       {winnings > 0 && (
-        <div className='max-w-md md:max-w-2xl lg:max-w-4xl mx-auto mt-5'>
-          <button onClick={onWithdrawWinnings} className='p-5 mx-4 bg-gradient-to-br from-[#5068fc]/50 to-[#011570]/50 border border-[#011570]/60 shadow-lg animate-pulse text-center rounded-xl w-full'>
+        <div className='max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto mt-5'>
+          <button onClick={onWithdrawWinnings} className='p-5 bg-gradient-to-br from-[#5068fc]/50 to-[#011570]/50 border border-[#011570]/60 shadow-lg animate-pulse text-center rounded-xl w-full'>
             <p className='text-xl font-extrabold text-yellow-200'>Winner Winner Chicken Dinner!</p>
             <p className='text-white'>Total Winnings: {ethers.utils.formatEther(winnings.toString())}{" "}{currency}</p>
             <br />
