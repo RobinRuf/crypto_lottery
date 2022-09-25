@@ -24,17 +24,22 @@ function CountdownTimer() {
 
                     <div className='flex space-x-6'>
                         <div className='flex-1'>
-                            <div className='countdown animate-pulse'>{hours}</div>
+                            <div className='countdown'>{days}</div>
+                            <div className='countdown-label'>days</div>
+                        </div>
+
+                        <div className='flex-1'>
+                            <div className='countdown'>{hours}</div>
                             <div className='countdown-label'>hours</div>
                         </div>
 
                         <div className='flex-1'>
-                            <div className='countdown animate-pulse'>{minutes}</div>
+                            <div className='countdown'>{minutes}</div>
                             <div className='countdown-label'>minutes</div>
                         </div>
 
-                        <div className='flex-1'>
-                            <div className='countdown animate-pulse'>{seconds}</div>
+                        <div className='hidden sm:inline sm:flex-1'>
+                            <div className='countdown'>{seconds}</div>
                             <div className='countdown-label'>seconds</div>
                         </div>
                     </div>
@@ -62,7 +67,7 @@ function CountdownTimer() {
                             <div className='countdown-label'>minutes</div>
                         </div>
 
-                        <div className='flex-1'>
+                        <div className='hidden sm:inline sm:flex-1'>
                             <div className='countdown'>{seconds}</div>
                             <div className='countdown-label'>seconds</div>
                         </div>
