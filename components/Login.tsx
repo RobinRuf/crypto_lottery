@@ -11,7 +11,7 @@ function Login() {
             <h1 className='md:text-6xl sm:text-5xl text-4xl text-white font-bold'>SAPPHIRE DRAW</h1>
             <h2 className='md:text-md text-sm text-white'>Your Crypto Lottery on the <span className='underline'>Polygon Network</span></h2>
 
-            <button onClick={connect} className='bg-gradient-to-br from-[#5068fc] to-[#011570] text-white px-8 py-5 mt-10 rounded-lg shadow-lg font-bold'>Connect with Metamask</button>
+            <button onClick={connect} className='bg-gradient-to-br from-[#5068fc] to-[#011570] text-white px-8 py-5 mt-10 rounded-lg shadow-lg font-bold transition ease-in-out hover:scale-105 duration-200'>Connect with Metamask</button>
             <a href='https://myterablock.medium.com/how-to-create-or-import-a-metamask-wallet-a551fc2f5a6b' target='_blank' className='text-white mt-10 underline'>How to create a Metamask Wallet?</a>
 
             {/* Reasons for Sapphire */}

@@ -92,7 +92,7 @@ function AdminControls() {
     }
 
   return (
-    <div className='text-white text-center px-5 py-3 rounded-md border-emerald-300/20 border'>
+    <div className='text-white text-center px-5 py-3 rounded-md border-[#011570]/60 border'>
         <h2 className='font-bold'>Admin Panel</h2>
         <p className='mb-5'>Total Comission to be withdrawn: {totalCommission && ethers.utils.formatEther(totalCommission?.toString())}{" "}{currency}</p>
 
