@@ -205,7 +205,7 @@ const Home: NextPage = () => {
 
             <div className='flex text-white items-center space-x-2 bg-[#011570]/50 border-[#011570]/60 border p-4'>
               <p>TICKETS</p>
-              <input className='flex w-full bg-transparent text-right outline-none' type='number' min={1} max={10} value={quantity} onChange={e => setQuantity(Number(e.target.value))} />
+              <input className='flex w-full bg-transparent text-right outline-none' type='number' min={1} value={quantity} onChange={e => setQuantity(Number(e.target.value))} />
             </div>
 
             <div className='space-y-2 mt-5'>
