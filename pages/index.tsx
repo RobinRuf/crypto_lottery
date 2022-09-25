@@ -12,8 +12,6 @@ import toast from 'react-hot-toast'
 import Marquee from 'react-fast-marquee'
 import AdminControls from '../components/AdminControls'
 import { InformationCircleIcon, XMarkIcon } from '@heroicons/react/24/solid'
-import { DefaultPlayer as Video } from 'react-html5video';
-import 'react-html5video/dist/styles.css'
 
 const Home: NextPage = () => {
   const [tutorial, setTutorial] = useState<boolean>(false);
@@ -156,20 +154,21 @@ const Home: NextPage = () => {
       )}
 
       {/* Help Section */}
-      <div className='flex flex-row items-center justify-center mt-10'>
+      <div className='flex flex-row items-center justify-center mt-4'>
         <InformationCircleIcon className='h-6 w-6 text-white' />
         <p onClick={(e) => setTutorial(!tutorial)} className='text-white pl-2 underline cursor-pointer'>How to get Matic in Metamask?</p>
       </div>
 
       { tutorial && (
-        <div className='flex items-center justify-center bg-black/30 rounded-lg w-full h-screen'>
-          <div className='ml-auto mr-2 mt-2 mb-2'>
-            <XMarkIcon className='h-6 w-6 text-white' />
-          </div>
-          <div className='h-48 w-28'>
-            <Video>
-              <source src='./tutorial.mp4' type='video/mp4' />
-            </Video>
+        <div className='flex justify-center items-center my-2'>
+          <div className='flex flex-col'>
+            <div className='ml-auto mb-2'>
+              <XMarkIcon onClick={(e) => setTutorial(false)} className='h-6 w-6 text-white cursor-pointer' />
+            </div>
+            <iframe loading='lazy' className='rounded-lg shadow-lg sm:w-[500px] sm:h-[300px] md:w-[744px] md:h-[504px]' src="https://www.veed.io/embed/3c2a865f-1d0a-460f-8afd-548c3dd5ffea" 
+              title="Sapphire Draw - How to get Matic in Metamask" 
+              allowFullScreen>
+            </iframe>
           </div>
         </div>
       )}
